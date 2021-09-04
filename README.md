@@ -1,4 +1,4 @@
-<img src="./logo/dexity_logo_black.svg">
+<img src="./logo/dexity_logo_black.svg" height="200">
 
 Программа решает следующие задачи:
 ---
