@@ -16,6 +16,8 @@
 3. Загрузите необходимые библиотеки через утилиту pip `pithon3 -m pip install Pillow flask pytesseract minecart pycurl transliterate PyMuPDF`
 4. Запустите сервер `python3 main.py`
 
+> Важное замечание, Debug конфигурация работала на ОС Windows, а Release на ОС Ubuntu
+
 ### Документация
 
 Отправка файла на сервер
