@@ -1,4 +1,4 @@
-<img src="./logo/logo2.png" height="200">
+<img src="./logo/logo2.png" height="100">
 
 Программа решает следующие задачи:
 ---
