@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviser AI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body style="min-height: 100vh; margin: 0"
+      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+<div style="width: 100%; margin-top: 30px; margin-bottom: 30px;" class="columns">
+    <div class="column">
+    </div>
+    <div class="column">
+        <h1 style="font-size: 52px" class="title"><b id="main-letter"
+                                                     style="color: #fd3f1d; font-size: 84px;">R</b>eviser AI</h1>
+        <p style="color: darkgray" class="subtitle">dexity team project for digital breakthrough 2021</p>
+        <br>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label class="subtitle">ИНН юридического лица:</label><br><br>
+            <input class="input" type="text" name="inn" id="inn" minlength="10" maxlength="10"><br><br>
+            <label class="subtitle">Выберите файл для классификации:</label><br><br>
+            <div id="file-field-in-form" class="file has-name">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="input_file" required>
+                    <span class="file-cta">
+                          <span class="file-label">
+                            Выбрать файл...
+                          </span>
+                    </span>
+                    <span class="file-name">
+                        Файл не выбран
+                    </span>
+                </label>
+            </div>
+            <br><br>
+            <button style="width: 100%" class="button is-dark" type="submit">Отправить</button>
+            <br><br>
+            <a href="/path" class="button is-light is-bordered" style="width: 100%">Проход по директории</a>
+        </form>
+        <br><br>
+        {% if classification_group %}
+        <div class="notification is-success">
+            Ваш файл был классифицирован как: <strong>{{ classification_group }}</strong><br>
+        </div>
+        {% endif %}
+        {% if success %}
+        <div class="notification is-success">
+            Успех! <strong>{{ success }}</strong><br>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-content">
+                <h2><b>Название файла: {{ filename }}</b></h2>
+                <p>ИНН: {{ inn }}</p>
+                <p>ID: {{ id }}</p>
+                <br>
+                <span class="tag is-success">Группа: {{ group }}</span>
+                <span class="tag is-success">ID группы: {{ group_id }}</span>
+            </div>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="notification is-danger">
+            Произошла ошибка: <strong>{{ error }}</strong>
+        </div>
+        {% endif %}
+    </div>
+    <div class="column">
+    </div>
+    <script>
+        const fileInput = document.querySelector('#file-field-in-form input[type=file]');
+        fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+                const fileName = document.querySelector('#file-field-in-form .file-name');
+                fileName.textContent = fileInput.files[0].name;
+            }
+        }
+    </script>
+</div>
+</body>
+</html>

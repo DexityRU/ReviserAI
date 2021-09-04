@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviser AI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body style="min-height: 100vh; margin: 0"
+      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+<div style="width: 100%; margin-top: 30px; margin-bottom: 30px;" class="columns">
+    <div class="column">
+    </div>
+    <div class="column">
+        <a href="/"><- Вернуться назад</a>
+        <h1 style="font-size: 52px" class="title"><b id="main-letter"
+                                                     style="color: #fd3f1d; font-size: 84px;">R</b>eviser AI</h1>
+        <p style="color: darkgray" class="subtitle">dexity team project for digital breakthrough 2021</p>
+        <br>
+        <form action="">
+            <label class="subtitle">Введите основную директорию для обхода файлов:</label><br><br>
+            <input class="input is-outlined is-info" type="text" name="path" id="path" value="/home/usr/playground" disabled required><br>
+            <p style="font-size: 15px" class="subtitle">В данном проекте реализован обход только одной директории на сервере</p>
+            <br><br>
+            <a style="width: 100%" class="button is-dark" href="/result">Начать</a>
+        </form>
+        <br><br>
+        {% if error %}
+        <div class="notification is-danger">
+            Произошла ошибка: <strong>{{ error }}</strong>
+        </div>
+        {% endif %}
+    </div>
+    <div class="column">
+    </div>
+</div>
+</body>
+</html>

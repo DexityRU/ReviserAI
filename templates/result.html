@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviser AI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body style="min-height: 100vh; margin: 0"
+      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+<div style="width: 100%; margin-top: 30px; margin-bottom: 30px;" class="columns">
+    <div class="column">
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <a href="/path"><- Верунться назад</a>
+                <div class="content">
+                    <h1 style="font-size: 40px" class="title">
+                        <b id="main-letter" style="color: #fd3f1d; font-size: 52px;">R</b>esult</h1>
+                    <p style="color: darkgray" class="subtitle">Reviser AI is a dexity team project for digital
+                        breakthrough 2021</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <div class="notification is-success">
+                        Класс удалось определить: {{ success_docs }}
+                    </div>
+                    <div class="notification is-warning">
+                        Класс не удалось определить: {{ warning_docs }}
+                    </div>
+                    <div class="notification is-danger">
+                        Неподходящих документов или файлов с ошибкой: {{ wrong_docs }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        {% for file in files %}
+        <div class="card">
+            <div class="card-content">
+                <h2><b>Название файла: {{ file['filename'] }}</b></h2>
+                <h2><b>Изначальное название файла: {{ file['old_filename'] }}</b></h2>
+                <p>Идентификатор в системе: {{ file['id'] }}</p>
+                <br>
+                {% if file['tag'] == "no-class" %}
+                    <span class="tag is-warning">Не удалось классифицировать</span>
+                {% elif file['tag'] == "wrong-file" %}
+                    <span class="tag is-danger">Ошибочный файл</span>
+                {% else %}
+                    <span class="tag is-success">{{ file['tag'] }}</span>
+                    <span class="tag is-success">{{ file['tag_id'] }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        {% endfor %}
+    </div>
+    <div class="column">
+    </div>
+</div>
+</body>
+</html>
