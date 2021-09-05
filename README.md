@@ -1,5 +1,6 @@
 <img src="./logo/dexity_logo_black.svg" height="50"> <br>
-<img src="./logo/logo2.png" height="100">
+<img src="./logo/logo2.png" height="100">  
+Проект на [Цифровой Прорыв](https://leadersofdigital.ru/) (трек ФинТех, кейс Промсвязьбанк)
 
 Программа решает следующие задачи:
 ---
