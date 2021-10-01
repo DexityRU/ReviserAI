@@ -14,7 +14,7 @@
 ### Запуск решения
 1. Установите Python 3.8 и выше
 2. Установите [Tesseract-OCR](https://github.com/tesseract-ocr/tesseract)
-3. Загрузите необходимые библиотеки через утилиту pip `pithon3 -m pip install Pillow flask pytesseract minecart pycurl transliterate PyMuPDF`
+3. Загрузите необходимые библиотеки через утилиту pip `python3 -m pip install Pillow flask pytesseract minecart pycurl transliterate PyMuPDF`
 4. Запустите сервер `python3 main.py`
 
 > Важное замечание, Debug конфигурация работала на ОС Windows, а Release на ОС Ubuntu
